@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleetwood Plumbing &amp; Heating — Surrey, BC</title>
+<meta name="description" content="Fleetwood Plumbing & Heating — drain cleaning, water heaters, leak repair and 24/7 emergency plumbing in Surrey, Langley, Delta and White Rock.">
+<style>
+  :root{
+    --navy:#0b2a4a;
+    --navy-2:#103a66;
+    --orange:#f97316;
+    --orange-dark:#ea6a0a;
+    --ink:#1c2733;
+    --muted:#5b6b7a;
+    --bg:#f6f8fa;
+    --card:#ffffff;
+    --line:#e3e9ef;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(11,42,74,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  img{max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+  .logo-mark{width:40px;height:40px;border-radius:10px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+  .logo-name{font-weight:800;font-size:1.05rem;line-height:1.15;letter-spacing:.2px}
+  .logo-name small{display:block;font-weight:500;font-size:.72rem;color:#bcd3ea;letter-spacing:1.4px;text-transform:uppercase}
+  .header-call{display:flex;align-items:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;font-size:.95rem;white-space:nowrap;transition:background .15s}
+  .header-call:hover{background:var(--orange-dark)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 70%);color:#fff;padding:56px 0 64px}
+  .hero-badge{display:inline-block;background:rgba(249,115,22,.16);border:1px solid rgba(249,115,22,.5);color:#ffb37a;font-weight:600;font-size:.82rem;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:2.1rem;line-height:1.15;font-weight:800;letter-spacing:-.5px;max-width:640px}
+  .hero h1 .accent{color:var(--orange)}
+  .hero p{color:#cfe0f0;max-width:560px;margin:16px 0 26px;font-size:1.05rem}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:12px;font-size:1rem;transition:transform .12s,background .15s,border-color .15s}
+  .btn:active{transform:scale(.98)}
+  .btn-call{background:var(--orange);color:#fff}
+  .btn-call:hover{background:var(--orange-dark)}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
+  .btn-ghost:hover{border-color:#fff}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;color:#a9c3dc;font-size:.9rem}
+  .hero-trust span::before{content:"✓ ";color:var(--orange);font-weight:800}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0}
+  .section-head{max-width:640px;margin-bottom:30px}
+  .section-head h2{font-size:1.65rem;font-weight:800;letter-spacing:-.3px;color:var(--navy)}
+  .section-head p{color:var(--muted);margin-top:8px}
+  .alt{background:#fff}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:960px){.grid{grid-template-columns:repeat(4,1fr)}}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;box-shadow:0 2px 8px rgba(11,42,74,.05)}
+  .svc .icon{width:48px;height:48px;border-radius:12px;background:#eef4fa;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px}
+  .svc h3{font-size:1.05rem;color:var(--navy);margin-bottom:6px}
+  .svc p{color:var(--muted);font-size:.92rem}
+  .svc .from{margin-top:12px;font-weight:800;color:var(--orange-dark);font-size:.95rem}
+
+  /* Reviews */
+  .reviews{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:820px){.reviews{grid-template-columns:repeat(3,1fr)}}
+  .review{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(11,42,74,.05)}
+  .stars{color:#f59e0b;font-size:1.05rem;letter-spacing:2px}
+  .review p{margin:12px 0 16px;font-size:.96rem}
+  .review .who{font-weight:700;color:var(--navy);font-size:.9rem}
+  .review .who small{display:block;color:var(--muted);font-weight:500}
+
+  /* Area */
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:#eef4fa;color:var(--navy);font-weight:600;padding:9px 18px;border-radius:999px;font-size:.95rem;border:1px solid #d7e5f2}
+
+  /* Text-back demo */
+  .demo-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+  @media(min-width:860px){.demo-grid{grid-template-columns:1.05fr .95fr}}
+  .demo-copy h2{font-size:1.65rem;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+  .demo-copy p{color:var(--muted);margin-top:10px}
+  .demo-steps{margin-top:20px;display:grid;gap:12px}
+  .demo-step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .demo-step .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  .demo-step b{color:var(--navy)}
+  .demo-step span{color:var(--muted);font-size:.92rem;display:block}
+  .call-btn{margin-top:22px;width:100%;justify-content:center;border:none;cursor:pointer;font-family:inherit}
+  .call-btn:disabled{opacity:.55;cursor:default}
+
+  .phone{width:300px;max-width:88vw;margin:0 auto;background:#111;border-radius:38px;padding:12px;box-shadow:var(--shadow)}
+  .phone-screen{background:#f2f4f7;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;height:520px}
+  .phone-notch{text-align:center;font-size:.68rem;color:#98a4b0;padding:8px 0 4px;background:#fff}
+  .thread-head{background:#fff;padding:10px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .thread-avatar{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+  .thread-head b{font-size:.92rem;color:var(--navy);display:block;line-height:1.1}
+  .thread-head small{color:var(--muted);font-size:.75rem}
+  .thread{flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:8px}
+  .msg{max-width:82%;padding:9px 13px;border-radius:18px;font-size:.88rem;line-height:1.4;word-wrap:break-word}
+  .msg.in{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:6px}
+  .msg.out{background:#2f7cf6;color:#fff;align-self:flex-end;border-bottom-right-radius:6px}
+  .msg.sys{align-self:center;background:transparent;color:#8b98a5;font-size:.75rem;text-align:center;padding:2px 6px}
+  .typing{align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 14px;display:none;gap:4px}
+  .typing i{width:7px;height:7px;border-radius:50%;background:#b6c2cd;display:block;animation:blink 1s infinite}
+  .typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+  @keyframes blink{0%,80%,100%{opacity:.35}40%{opacity:1}}
+  .thread-input{background:#fff;border-top:1px solid var(--line);padding:10px;display:flex;gap:8px}
+  .thread-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:.88rem;font-family:inherit;outline:none}
+  .thread-input input:focus{border-color:var(--orange)}
+  .thread-input button{background:var(--orange);color:#fff;border:none;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;font-family:inherit}
+  .thread-input button:disabled{opacity:.5;cursor:default}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:760px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+  .contact-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+  .contact-card .icon{font-size:26px;margin-bottom:8px}
+  .contact-card h3{color:var(--navy);font-size:1rem;margin-bottom:4px}
+  .contact-card p,.contact-card a{color:var(--muted);font-size:.94rem;text-decoration:none}
+  .contact-card a.big{color:var(--orange-dark);font-weight:800;font-size:1.15rem}
+
+  footer{background:var(--navy);color:#bcd3ea;padding:28px 0;font-size:.88rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+  .demo-flag{background:#fff7ed;border-top:1px solid #fed7aa;color:#9a3412;text-align:center;font-size:.8rem;padding:8px 12px}
+
+  /* ---------- Chatbot ---------- */
+  #chat-fab{position:fixed;right:20px;bottom:20px;z-index:100;width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;border:none;font-size:27px;cursor:pointer;box-shadow:0 8px 24px rgba(249,115,22,.45);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+  #chat-fab:hover{transform:scale(1.06)}
+  #chat-fab .dot{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#22c55e;border:2px solid #fff}
+  #chat-panel{position:fixed;right:20px;bottom:92px;z-index:100;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 130px);background:#fff;border-radius:18px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+  #chat-panel.open{display:flex}
+  .chat-head{background:var(--navy);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:11px}
+  .chat-head .avatar{width:38px;height:38px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
+  .chat-head b{display:block;font-size:.98rem;line-height:1.15}
+  .chat-head small{color:#a9c3dc;font-size:.78rem}
+  .chat-head .close{margin-left:auto;background:none;border:none;color:#fff;font-size:20px;cursor:pointer;padding:4px}
+  #chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:#f7fafc}
+  .cmsg{max-width:85%;padding:10px 13px;border-radius:16px;font-size:.9rem;line-height:1.45}
+  .cmsg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:5px}
+  .cmsg.user{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:5px}
+  .cmsg a{color:var(--orange-dark);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .chip-btn{background:#eef4fa;border:1px solid #d7e5f2;color:var(--navy);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
+  .chip-btn:hover{background:#e2edf7}
+  .chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:.9rem;font-family:inherit;outline:none}
+  .chat-input input:focus{border-color:var(--orange)}
+  .chat-input button{background:var(--orange);color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer;font-family:inherit}
+</style>
+</head>
+<body>
+
+<div class="demo-flag">Demo site — Fleetwood Plumbing &amp; Heating is a fictional business used to demonstrate the AI front-desk package.</div>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top">
+      <span class="logo-mark">🔧</span>
+      <span class="logo-name">Fleetwood Plumbing<small>&amp; Heating · Surrey, BC</small></span>
+    </a>
+    <a class="header-call" href="tel:+16045550147">📞 (604) 555-0147</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-badge">★ 4.9 rated · Licensed &amp; insured · Surrey, BC</span>
+      <h1>Plumbing problems? <span class="accent">Fixed today.</span></h1>
+      <p>From burst pipes to cold showers, Fleetwood Plumbing &amp; Heating gets Surrey homes back up and running — fast, honest, and done right the first time.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-call" href="tel:+16045550147">📞 Call (604) 555-0147</a>
+        <a class="btn btn-ghost" href="#textback">See how we never miss a call ↓</a>
+      </div>
+      <div class="hero-trust">
+        <span>Upfront flat-rate pricing</span>
+        <span>Same-day service</span>
+        <span>24/7 emergency line</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Four core services, one promise: a real plumber at your door, on time, with the price agreed before we start.</p>
+      </div>
+      <div class="grid">
+        <div class="svc">
+          <div class="icon">🌀</div>
+          <h3>Drain Cleaning</h3>
+          <p>Stubborn clogs, slow drains, sewer backups. Camera inspection included so you see exactly what we cleared.</p>
+          <div class="from">From $149</div>
+        </div>
+        <div class="svc">
+          <div class="icon">🚿</div>
+          <h3>Water Heaters</h3>
+          <p>Tank and tankless installs, repairs, and replacements — sized right for your home, hauled away when we're done.</p>
+          <div class="from">Installs from $1,899</div>
+        </div>
+        <div class="svc">
+          <div class="icon">🔩</div>
+          <h3>Leak Repair</h3>
+          <p>Hidden leaks found fast with electronic detection. We fix the pipe, not just the puddle, and check for water damage.</p>
+          <div class="from">From $189</div>
+        </div>
+        <div class="svc">
+          <div class="icon">🚨</div>
+          <h3>Emergency Plumbing</h3>
+          <p>Burst pipe at 2am? Flooding kitchen? Our emergency line never sleeps — a real person answers, day or night.</p>
+          <div class="from">Callout $99</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXT-BACK DEMO -->
+  <section id="textback" class="alt">
+    <div class="wrap">
+      <div class="demo-grid">
+        <div class="demo-copy">
+          <h2>Try it: the missed-call text-back</h2>
+          <p>Most plumbing jobs are won by whoever responds first. When the whole crew is on a job, calls go to voicemail — and customers call the next name on Google. Our system texts them back in seconds instead.</p>
+          <div class="demo-steps">
+            <div class="demo-step"><span class="n">1</span><div><b>You call the shop</b><span>Nobody picks up — the tech is under a house in Fleetwood.</span></div></div>
+            <div class="demo-step"><span class="n">2</span><div><b>A text lands in ~2 seconds</b><span>Automatic, friendly, and it opens a real conversation.</span></div></div>
+            <div class="demo-step"><span class="n">3</span><div><b>You reply, it replies</b><span>Type anything in the phone and watch it answer like a front desk would.</span></div></div>
+          </div>
+          <button class="btn btn-call call-btn" id="callBtn">📞 Call the shop (no answer — he's on a job)</button>
+        </div>
+        <div class="phone" aria-label="Phone mockup showing the text-back conversation">
+          <div class="phone-screen">
+            <div class="phone-notch">9:41 · LTE ▰▰▰▱</div>
+            <div class="thread-head">
+              <span class="thread-avatar">F</span>
+              <div><b>Fleetwood Plumbing</b><small>(604) 555-0147 · text message</small></div>
+            </div>
+            <div class="thread" id="thread">
+              <div class="msg sys">Today 9:41 AM</div>
+              <div class="msg sys" id="threadHint">Press “Call the shop” to see what your customers get when you can't pick up.</div>
+            </div>
+            <div class="typing" id="typing"><i></i><i></i><i></i></div>
+            <form class="thread-input" id="threadForm">
+              <input id="threadInput" type="text" placeholder="Text message" autocomplete="off" disabled>
+              <button type="submit" id="threadSend" disabled>Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Neighbours talk</h2>
+        <p>4.9 stars across 300+ Google reviews from homes across Surrey and the Fraser Valley.</p>
+      </div>
+      <div class="reviews">
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Water heater died on a Sunday morning. They answered on the second ring, had a new tank in by lunch, and the price was exactly what they quoted on the phone.”</p>
+          <div class="who">Harpreet S.<small>Fleetwood, Surrey</small></div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Missed their call back window by minutes and still got a text right away asking what I needed. Booked a drain cleaning for the same afternoon. Unreal service.”</p>
+          <div class="who">Melissa T.<small>Langley</small></div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Found a leak two other companies missed, showed me the camera footage, fixed it same visit. No upsell, no pressure. These are our plumbers now.”</p>
+          <div class="who">Dan &amp; Priya R.<small>White Rock</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="area" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Service area</h2>
+        <p>Based in Fleetwood, Surrey — on the road across the eastern Fraser Valley and South Surrey every day.</p>
+      </div>
+      <div class="area-chips">
+        <span class="chip">Surrey</span>
+        <span class="chip">Langley</span>
+        <span class="chip">Delta</span>
+        <span class="chip">White Rock</span>
+        <span class="chip">Fleetwood</span>
+        <span class="chip">Cloverdale</span>
+        <span class="chip">Newton</span>
+        <span class="chip">Guildford</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Call, text the number below, or tap the chat bubble — someone (or something very helpful) always answers.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <h3>Call or text</h3>
+          <a class="big" href="tel:+16045550147">(604) 555-0147</a>
+          <p>Tap to call now</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">🕖</div>
+          <h3>Hours</h3>
+          <p>Mon–Sat: 7:00am – 7:00pm<br>Sunday: emergency only<br><b>24/7 emergency line</b></p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <h3>Based in</h3>
+          <p>Fleetwood, Surrey, BC<br>Serving Surrey · Langley<br>Delta · White Rock</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Fleetwood Plumbing &amp; Heating (fictional demo business)</span>
+    <span>Demo of the AI front-desk package — website + chat + missed-call text-back</span>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<button id="chat-fab" aria-label="Chat with us">💬<span class="dot"></span></button>
+<div id="chat-panel" role="dialog" aria-label="Chat with Fleetwood Plumbing">
+  <div class="chat-head">
+    <span class="avatar">🔧</span>
+    <div><b>Fleetwood Assistant</b><small>Typically replies instantly</small></div>
+    <button class="close" id="chatClose" aria-label="Close chat">✕</button>
+  </div>
+  <div id="chat-msgs"></div>
+  <form class="chat-input" id="chatForm">
+    <input id="chatInput" type="text" placeholder="Ask about services, prices, hours…" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+/* ============================================================
+   FLEETWOOD PLUMBING — demo front desk (pure client-side JS)
+   ============================================================ */
+const PHONE_DISPLAY = "(604) 555-0147";
+const PHONE_TEL = "tel:+16045550147";
+
+const KB = {
+  services: [
+    { name: "Drain cleaning", price: "from $149", blurb: "clogs, slow drains and sewer backups, with a camera inspection included" },
+    { name: "Water heater install & repair", price: "installs from $1,899", blurb: "tank and tankless units, repairs and full replacements" },
+    { name: "Leak repair", price: "from $189", blurb: "electronic leak detection and proper pipe repairs" },
+    { name: "Emergency plumbing", price: "$99 callout", blurb: "burst pipes, flooding and no-water emergencies, 24/7" }
+  ],
+  hours: "We're open Monday to Saturday, 7am to 7pm. Sundays are emergency-only — and our emergency line runs 24/7, every day of the year.",
+  areas: ["Surrey", "Langley", "Delta", "White Rock"]
+};
+
+/* ---------------- Chatbot ---------------- */
+const chatPanel = document.getElementById('chat-panel');
+const chatFab   = document.getElementById('chat-fab');
+const chatMsgs  = document.getElementById('chat-msgs');
+const chatForm  = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+
+let chatOpened = false;
+/* Booking flow state machine: idle -> name -> phone -> issue -> done */
+let booking = { stage: 'idle', name: '', phone: '', issue: '' };
+
+function addMsg(text, who, chips) {
+  const div = document.createElement('div');
+  div.className = 'cmsg ' + who;
+  div.innerHTML = text;
+  chatMsgs.appendChild(div);
+  if (chips && chips.length) {
+    const row = document.createElement('div');
+    row.className = 'chips';
+    chips.forEach(c => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip-btn';
+      b.textContent = c;
+      b.addEventListener('click', () => handleUserText(c));
+      row.appendChild(b);
+    });
+    chatMsgs.appendChild(row);
+  }
+  chatMsgs.scrollTop = chatMsgs.scrollHeight;
+}
+function botSay(text, chips) { setTimeout(() => addMsg(text, 'bot', chips), 350); }
+
+function openChat() {
+  chatPanel.classList.add('open');
+  chatFab.querySelector('.dot').style.display = 'none';
+  if (!chatOpened) {
+    chatOpened = true;
+    botSay("Hi there! 👋 You're chatting with the Fleetwood Plumbing assistant. I can help with services, prices, hours — or book you a callback. What's going on at your place?",
+      ["Services & prices", "Hours", "Book a callback", "Service area"]);
+  }
+  setTimeout(() => chatInput.focus(), 100);
+}
+chatFab.addEventListener('click', () => {
+  chatPanel.classList.contains('open') ? chatPanel.classList.remove('open') : openChat();
+});
+document.getElementById('chatClose').addEventListener('click', () => chatPanel.classList.remove('open'));
+
+chatForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = chatInput.value.trim();
+  if (!v) return;
+  chatInput.value = '';
+  handleUserText(v);
+});
+
+function handleUserText(raw) {
+  addMsg(escapeHtml(raw), 'user');
+  const text = raw.toLowerCase();
+
+  /* --- booking flow in progress --- */
+  if (booking.stage === 'name') {
+    booking.name = raw.trim();
+    booking.stage = 'phone';
+    botSay(`Thanks, ${escapeHtml(booking.name.split(' ')[0])}! What's the best phone number to reach you at?`);
+    return;
+  }
+  if (booking.stage === 'phone') {
+    booking.phone = raw.trim();
+    booking.stage = 'issue';
+    botSay("Got it. Last thing — what's the issue? (e.g. \"kitchen sink is clogged\" or \"no hot water\")");
+    return;
+  }
+  if (booking.stage === 'issue') {
+    booking.issue = raw.trim();
+    booking.stage = 'idle';
+    const n = escapeHtml(booking.name), p = escapeHtml(booking.phone), i = escapeHtml(booking.issue);
+    booking = { stage: 'idle', name: '', phone: '', issue: '' };
+    botSay(`✅ <b>Callback request confirmed!</b><br><br>
+      <b>Name:</b> ${n}<br><b>Phone:</b> ${p}<br><b>Issue:</b> ${i}<br><br>
+      A real human from Fleetwood will call you back within one business hour (Mon–Sat 7am–7pm). If it's an emergency, call us right now at <a href="${PHONE_TEL}">${PHONE_DISPLAY}</a>.`,
+      ["Services & prices", "Hours"]);
+    return;
+  }
+
+  /* --- intents --- */
+  if (/\b(book|callback|call back|appointment|schedule|come out|visit)\b/.test(text)) {
+    booking.stage = 'name';
+    botSay("Happy to book you a callback! First — what's your name?");
+    return;
+  }
+  if (/(price|cost|how much|charge|quote|rate)/.test(text)) {
+    botSay(priceAnswer(text));
+    return;
+  }
+  if (/(hour|open|close|when|24\/7|sunday|weekend)/.test(text)) {
+    botSay(KB.hours + " Need a hand with something?", ["Book a callback", "Services & prices"]);
+    return;
+  }
+  if (/(area|where|serve|location|come to|surrey|langley|delta|white rock)/.test(text)) {
+    botSay(`We cover <b>${KB.areas.join(', ')}</b> — including Fleetwood, Cloverdale, Newton and Guildford. If you're just outside that zone, call us at <a href="${PHONE_TEL}">${PHONE_DISPLAY}</a> and we'll see what we can do.`);
+    return;
+  }
+  if (/(emergency|burst|flood|flooding|leaking everywhere|no water|urgent)/.test(text)) {
+    botSay(`That sounds urgent 🚨 — for emergencies, call us right now at <a href="${PHONE_TEL}">${PHONE_DISPLAY}</a>. The emergency callout is $99 and the line is answered 24/7. If you'd rather, I can also book a callback:`, ["Book a callback"]);
+    return;
+  }
+  if (/(service|offer|do you do|what do you|drain|heater|leak|plumb)/.test(text)) {
+    const list = KB.services.map(s => `• <b>${s.name}</b> — ${s.price}`).join('<br>');
+    botSay(`Here's what we do:<br><br>${list}<br><br>Want rough pricing on one of these, or shall I book you a callback?`,
+      ["Book a callback", "Hours"]);
+    return;
+  }
+  if (/(hi|hello|hey|morning|afternoon)\b/.test(text)) {
+    botSay("Hello! 👋 How can I help — need a price, our hours, or a callback booked?", ["Services & prices", "Book a callback"]);
+    return;
+  }
+  if (/(thank|thanks|great|perfect|awesome)/.test(text)) {
+    botSay("Anytime! If anything else comes up — a drip, a clog, a cold shower — you know where to find us. 🔧");
+    return;
+  }
+  /* --- fallback handoff --- */
+  botSay(`Good question — that's one for the humans. I can book you a callback and someone from the shop will sort it out, or you can reach us at <a href="${PHONE_TEL}">${PHONE_DISPLAY}</a> (Mon–Sat 7am–7pm, emergencies 24/7).`,
+    ["Book a callback", "Services & prices"]);
+}
+
+function priceAnswer(text) {
+  const lines = [];
+  if (/drain|clog|block/.test(text)) lines.push(`🌀 <b>Drain cleaning</b> — from $149, camera inspection included.`);
+  if (/heater|hot water|tank/.test(text)) lines.push(`🚿 <b>Water heaters</b> — installs from $1,899; repairs quoted after a look.`);
+  if (/leak|drip|pipe/.test(text)) lines.push(`🔩 <b>Leak repair</b> — from $189, with electronic leak detection.`);
+  if (/emergency|callout|after hours/.test(text)) lines.push(`🚨 <b>Emergency callout</b> — $99, 24/7.`);
+  if (!lines.length) {
+    lines.push(KB.services.map(s => `• <b>${s.name}</b> — ${s.price}`).join('<br>'));
+    lines.push(`<br>Every job is quoted flat-rate before we start — no hourly surprises.`);
+  } else {
+    lines.push(`Final price is always confirmed flat-rate before we start work.`);
+  }
+  lines.push(`Want me to book a callback for an exact quote?`);
+  return lines.join('<br>');
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* ---------------- Missed-call text-back demo ---------------- */
+const callBtn     = document.getElementById('callBtn');
+const thread      = document.getElementById('thread');
+const threadHint  = document.getElementById('threadHint');
+const typing      = document.getElementById('typing');
+const threadForm  = document.getElementById('threadForm');
+const threadInput = document.getElementById('threadInput');
+const threadSend  = document.getElementById('threadSend');
+let callStarted = false;
+
+function threadMsg(text, who) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + who;
+  div.textContent = text;
+  thread.appendChild(div);
+  thread.scrollTop = thread.scrollHeight;
+}
+function showTyping(on) {
+  typing.style.display = on ? 'flex' : 'none';
+  if (on) thread.scrollTop = thread.scrollHeight;
+}
+
+callBtn.addEventListener('click', () => {
+  if (callStarted) return;
+  callStarted = true;
+  callBtn.disabled = true;
+  callBtn.textContent = '☎️ Ringing… ring… ring… no answer';
+  if (threadHint) threadHint.remove();
+  threadMsg('📞 Missed call — (604) 555-0147 · just now', 'sys');
+
+  setTimeout(() => {
+    callBtn.textContent = "💬 Text received! Try replying in the phone ↓";
+    showTyping(true);
+    setTimeout(() => {
+      showTyping(false);
+      threadMsg("Hi! Sorry we missed your call at Fleetwood Plumbing. How can we help?", 'in');
+      threadInput.disabled = false;
+      threadSend.disabled = false;
+      threadInput.focus();
+    }, 900);
+  }, 2000);
+});
+
+threadForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = threadInput.value.trim();
+  if (!v) return;
+  threadInput.value = '';
+  threadMsg(v, 'out');
+  showTyping(true);
+  setTimeout(() => {
+    showTyping(false);
+    threadMsg(autoReply(v.toLowerCase()), 'in');
+  }, 1100);
+});
+
+function autoReply(t) {
+  if (/(drain|clog|block|sink|toilet|shower)/.test(t))
+    return "Got it — sounds like a drain issue. Drain cleaning starts at $149 and we can usually get someone out today. What's your address in Surrey?";
+  if (/(heater|hot water|tank|cold shower)/.test(t))
+    return "No hot water is no fun. Water heater installs start at $1,899, and we repair most makes. Is it leaking, or just not heating?";
+  if (/(leak|drip|burst|flood|water)/.test(t))
+    return "Leaks get worse fast, so let's get you booked. Leak repair starts at $189. A dispatcher will call you in the next few minutes to confirm a time — is this the best number?";
+  if (/(price|cost|how much|quote)/.test(t))
+    return "Happy to help: drain cleaning from $149, leak repair from $189, water heater installs from $1,899, emergency callout $99. Which one are you dealing with?";
+  if (/(book|appointment|today|tomorrow|come|schedule|yes)/.test(t))
+    return "Perfect — I've flagged this for the dispatcher. Someone from Fleetwood will call this number within the hour (Mon–Sat 7am–7pm) to lock in a time. Anything else?";
+  if (/(hour|open|when)/.test(t))
+    return "We're open Mon–Sat 7am–7pm, and the emergency line runs 24/7 at (604) 555-0147. Want me to get you booked in?";
+  if (/(thank|thanks|great)/.test(t))
+    return "Anytime! Fleetwood Plumbing — we'll take it from here. 🔧";
+  return "Thanks for the details! I've passed this to the team — someone from Fleetwood Plumbing will call you shortly to help. For anything urgent, call us at (604) 555-0147 (24/7 for emergencies).";
+}
+</script>
+</body>
+</html>
